@@ -1,0 +1,9 @@
+{    
+    "viagemId": 1,
+    "personagemId": 1,
+	"personagemNome": "Rick",
+	"personagemDimensao": "C-130",
+    "destinoId": 1,
+	"destinoNome": "C-130",
+    "data": "2020-11-27T10:43:37.74"
+}

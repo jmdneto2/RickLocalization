@@ -1,0 +1,26 @@
+<div fxLayout="row" fxFlex.md="70" fxLayoutWrap class="card-deck-container mat-elevation-z4">
+  <div fxFlex *ngFor="let card of cardsDisplayed" class="card-item">
+    <app-card [ngStyle]="{'width':'300' + 'px'}" [dataCard]="card"></app-card>  
+
+  </div>
+
+  <div class="paginator mat-elevation-z4">    
+      <div class="paginator mat-elevation-z4" *ngIf="cardsDisplayed.length !== 0">
+      <mat-paginator [pageIndex]="currentPage"                     
+                     [length]="totalSize"
+                     [pageSize]="pageSize"                     
+                     [pageSizeOptions]="[1, 2, 5]"
+                     (page)="pageEvent = geraPaginacao($event)">
+      </mat-paginator>
+    </div>
+  </div>
+
+
+  <!--<mat-paginator [pageIndex]="currentPage"
+                 [length]="paginatorSize"                                          
+                 [pageSize]="numberOfCardsDisplayedInPage "
+                 [pageSizeOptions]="[1, 2, 5]"                     
+                 (page)="updateCardsDisplayedInPage($event)">
+
+
+  </mat-paginator>-->

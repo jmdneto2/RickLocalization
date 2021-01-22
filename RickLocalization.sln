@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.WebApi", "RickLocalization\RickLocalization.WebApi.csproj", "{6D4462D8-AA05-42C9-86B2-B4BCAE127184}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FAA2950-2131-48BE-9CEA-9F8DD82A1515} = {2FAA2950-2131-48BE-9CEA-9F8DD82A1515}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Domain", "RickLocalization.Domain\RickLocalization.Domain.csproj", "{8F57DBB3-0C70-4163-8E72-554A2101AD64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Tests", "RickLocalization.Tests\RickLocalization.Tests.csproj", "{71DD1047-A250-4C73-8FF5-76B26C567C0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Business", "RickLocalization.Businness\RickLocalization.Business.csproj", "{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Shared", "Shared\RickLocalization.Shared.csproj", "{026FF005-7FC9-46E3-9587-85479CBDE74A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Repository", "RickLocalization.Repository\RickLocalization.Repository.csproj", "{5EC264ED-7ECE-42F7-A010-1E339721D014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D4462D8-AA05-42C9-86B2-B4BCAE127184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4462D8-AA05-42C9-86B2-B4BCAE127184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4462D8-AA05-42C9-86B2-B4BCAE127184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4462D8-AA05-42C9-86B2-B4BCAE127184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F57DBB3-0C70-4163-8E72-554A2101AD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F57DBB3-0C70-4163-8E72-554A2101AD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F57DBB3-0C70-4163-8E72-554A2101AD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F57DBB3-0C70-4163-8E72-554A2101AD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DD1047-A250-4C73-8FF5-76B26C567C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DD1047-A250-4C73-8FF5-76B26C567C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DD1047-A250-4C73-8FF5-76B26C567C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DD1047-A250-4C73-8FF5-76B26C567C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{026FF005-7FC9-46E3-9587-85479CBDE74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{026FF005-7FC9-46E3-9587-85479CBDE74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{026FF005-7FC9-46E3-9587-85479CBDE74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{026FF005-7FC9-46E3-9587-85479CBDE74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC264ED-7ECE-42F7-A010-1E339721D014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC264ED-7ECE-42F7-A010-1E339721D014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC264ED-7ECE-42F7-A010-1E339721D014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC264ED-7ECE-42F7-A010-1E339721D014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {266DDD8F-4646-4AC0-8819-EB7379BAC5B8}
+	EndGlobalSection
+EndGlobal

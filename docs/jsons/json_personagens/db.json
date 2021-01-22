@@ -1,0 +1,61 @@
+{ "personagens":
+ [
+	{    	
+		"personagemId1": 1,
+		"personagemNome1": "Rick",
+		"personagemDimensao1": "C-130",
+		"imagemPersonagem1":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg",
+		"personagemId2": 11,
+		"personagemNome2": "Morty",
+		"personagemDimensao2": "C-130",
+		"imagemPersonagem2":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg"
+		
+
+	},
+	{    	
+		"personagemId1": 2,
+		"personagemNome1": "Rick",
+		"personagemDimensao1": "C-131",
+		"imagemPersonagem1":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg",
+		"personagemId2": 12,
+		"personagemNome2": "Morty",
+		"personagemDimensao2": "C-131",
+		"imagemPersonagem2":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg"
+
+	},
+	{    	
+		"personagemId1": 3,
+		"personagemNome1": "Rick",
+		"personagemDimensao1": "C-132",
+		"imagemPersonagem1":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg",
+		"personagemId2": 13,
+		"personagemNome2": "Morty",
+		"personagemDimensao2": "C-132",
+		"imagemPersonagem2":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg"
+
+	},
+	{    	
+		"personagemId1": 4,
+		"personagemNome1": "Rick",
+		"personagemDimensao1": "C-133",
+		"imagemPersonagem1":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg",
+		"personagemId2": 14,
+		"personagemNome2": "Morty",
+		"personagemDimensao2": "C-133",
+		"imagemPersonagem2":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg"
+
+	},
+	{    	
+		"personagemId1": 5,
+		"personagemNome1": "Rick",
+		"personagemDimensao1": "C-134",
+		"imagemPersonagem1":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg",
+		"personagemId2": 15,
+		"personagemNome2": "Morty",
+		"personagemDimensao2": "C-134",
+		"imagemPersonagem2":"http://labcon.fafich.ufmg.br/wp-content/uploads/2018/06/5164749-940x429.jpg"
+
+	}
+	
+ ]
+}

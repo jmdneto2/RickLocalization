@@ -1,0 +1,24 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title class="md-card-title">
+      {{card.personagemNome1 + " " + card.personagemDimensao1 + " X " + card.personagemNome2 + " " + card.personagemDimensao2}}
+    </mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{card.imagemPersonagem1}}">
+  <img mat-card-image src="{{card.imagemPersonagem2}}">
+
+
+  <!--<mat-card-content>
+    <div class="card-text-content">-->
+      <!--cardShortDescription}}--><!--Descricao
+    </div>
+  </mat-card-content>-->
+
+  <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button (click)="showHistorico()">HISTÓRICO</button>
+    <button mat-button (click)="addViagem()">NOVA VIAGEM</button>
+  </mat-card-actions>
+
+</mat-card>
