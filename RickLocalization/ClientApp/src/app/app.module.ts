@@ -27,6 +27,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CardComponent } from './card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { CardDeckComponent } from './card-deck/card-deck.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogOverviewExampleDialog, ModalComponent } from './modal/modal.component';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HistoricoComponent } from './views/historico/historico.component';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 
 @NgModule({
@@ -40,7 +49,9 @@ import { CardDeckComponent } from './card-deck/card-deck.component';
     FooterComponent,
     NavComponent,
     CardComponent,
-    CardDeckComponent
+    CardDeckComponent,
+    ModalComponent,    
+    DialogOverviewExampleDialog, HistoricoComponent
     
   ],
   imports: [
@@ -51,6 +62,7 @@ import { CardDeckComponent } from './card-deck/card-deck.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'historico', component: HistoricoComponent }
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -60,10 +72,14 @@ import { CardDeckComponent } from './card-deck/card-deck.component';
     MatSidenavModule,
     MatListModule,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule
     
 
-  ],
+  ],  
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { CardModel } from '.././shared/models/card.model';
 import { CardDeckService } from './card-deck.service';
 
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-card-deck',
@@ -11,8 +11,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
   styleUrls: ['./card-deck.component.css']
 })
 export class CardDeckComponent implements OnInit {    
-  //paginatorSize: number;
-  //numberOfCardsDisplayedInPage = 1;
+  
   public cardsDisplayed: CardModel[];
 
   public array: any;
@@ -42,15 +41,12 @@ export class CardDeckComponent implements OnInit {
     this.cardDeckService.getCards()
       .subscribe(
         ((data: CardModel[]) => {
-          this.dataSource = new MatTableDataSource<Element>(data);
+          this.dataSource = new MatTableDataSource<CardModel>(data);
           this.dataSource.paginator = this.paginator;
           this.array = data;
           this.totalSize = this.array.length;
           this.filtraPagina();
-          this.cardsDisplayed = data;
-          //let x = this.cardsDisplayed.length;
-          //this.paginatorSize = x;
-          //console.log(x);
+          this.cardsDisplayed = data;          
         })
       );
   }
@@ -62,42 +58,6 @@ export class CardDeckComponent implements OnInit {
     this.dataSource = part;
     this.cardsDisplayed = this.dataSource;
   }
-
-
-
-  //getListaCards() {
-
-  //  this.cardDeckService.getCards()
-  //    .subscribe(
-  //      (data: CardModel[]) => {
-  //        this.cardsDisplayed = data;
-  //        let x = this.cardsDisplayed.length;
-  //        this.paginatorSize = x;
-  //        console.log(x);
-  //      }        
-  //  );    
-  //}
-
-  //updateCardsDisplayedInPage(evento) {
-  //  let y = this.cardsDisplayed.length;
-  //  console.log("Passou aqui");
-    
-  //  this.numberOfCardsDisplayedInPage = evento.pageSize;
-  //}
-
-
-
-}
-
-export interface Element {
-  personagemId1: number;
-  personagemNome1: string;
-  personagemDimensao1: string;
-  imagemPersonagem1: string;
-  personagemId2: number;
-  personagemNome2: string;
-  personagemDimensao2: string;
-  imagemPersonagem2: string;
 }
 
 

@@ -13,11 +13,13 @@ import { Observable } from 'rxjs';
 export class CardDeckService {
 
   constructor(private http: HttpClient) { }
+
   public cardsDisplayed: CardModel[];
 
   getCards(): Observable<CardModel[]> {
     const dados = this.http.get<CardModel[]>('http://localhost:3004/personagens', { params: {}, responseType: 'json' })
-    
+
+    return dados;
   
 
     // 'http://localhost:5000/api/cliente/',
@@ -30,6 +32,6 @@ export class CardDeckService {
     //  }, error => console.error(error));
     //}
 
-    return dados;
+    
   }
 }

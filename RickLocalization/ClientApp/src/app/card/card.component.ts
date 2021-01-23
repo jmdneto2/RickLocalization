@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CardModel } from '../shared/models/card.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -10,7 +11,7 @@ export class CardComponent implements OnInit {
   @Input() dataCard: CardModel;
   card: CardModel;
 
-  constructor() {
+  constructor(private router: Router) {
     
   }
 
@@ -19,8 +20,9 @@ export class CardComponent implements OnInit {
     //console.log(this.card);
   }
 
-  showHistorico(): void {
+  showHistorico(cardEscolhido): void {
     console.log("Passou Aqui");
+    this.router.navigate(['./historico'], { queryParams: { idPerson: this.card.personagemId1, personagemDimensao2: this.card.personagemDimensao2}});
   }
 
   addViagem(): void {

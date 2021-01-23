@@ -1,0 +1,43 @@
+<h1>Histórico de Viagens do Rick a Partir da Dimensão {{nomeDimensao}} </h1>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <ng-container matColumnDef="viagemId">
+    <th mat-header-cell *matHeaderCellDef> Id Viagem </th>
+    <td mat-cell *matCellDef="let element"> {{element.viagemId}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="personagemNome">
+    <th mat-header-cell *matHeaderCellDef> Personagem </th>
+    <td mat-cell *matCellDef="let element"> {{element.personagemNome}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="personagemDimensao">
+    <th mat-header-cell *matHeaderCellDef> Dimensão Person. </th>
+    <td mat-cell *matCellDef="let element"> {{element.personagemDimensao}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="origemNome">
+    <th mat-header-cell *matHeaderCellDef> Dimensão Origem </th>
+    <td mat-cell *matCellDef="let element"> {{element.origemNome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="destinoNome">
+    <th mat-header-cell *matHeaderCellDef> Destino </th>
+    <td mat-cell *matCellDef="let element"> {{element.destinoNome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef> Data </th>
+    <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
