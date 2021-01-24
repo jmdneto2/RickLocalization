@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>NOVA VIAGEM</h1>
+<div mat-dialog-content>
+  <p>Selecione abaixo o destino:</p>  
+  <mat-form-field>    
+    <mat-select  (selectionChange)="setValue($event)">
+      <mat-option value="1">C-130</mat-option>
+      <mat-option value="2">C-131</mat-option>
+      <mat-option value="3">C-132</mat-option>
+      <mat-option value="4">C-133</mat-option>
+      <mat-option value="5">C-145</mat-option>
+      <mat-option value="6">C-140</mat-option>
+      <mat-option value="7">C-141</mat-option>
+      <mat-option value="8">C-142</mat-option>
+      <mat-option value="9">C-143</mat-option>
+      <mat-option value="10">C-145</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelar()">Cancelar</button>
+  <button mat-button (click)="onCadastrarViagem()" cdkFocusInitial>Ok</button>  
+</div>

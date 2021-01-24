@@ -3,44 +3,44 @@
 	{    
 		"viagemId": 1,
 		"personagemId": 1,
-		"personagemNome": "Rick",
+		"personagemNome": "Rick",		
 		"personagemDimensao": "C-130",
 		"origemId": 1,
 		"origemNome": "C-130",
-		"destinoId": 1,
+		"destinoId": 2,
 		"destinoNome": "C-140",
 		"data": "2020-11-27T10:43:37.74"
 	},
 	{    
 		"viagemId": 2,
 		"personagemId": 1,
-		"personagemNome": "Rick",
+		"personagemNome": "Rick",		
 		"personagemDimensao": "C-130",
 		"origemId": 1,
 		"origemNome": "C-130",
-		"destinoId": 2,
+		"destinoId": 3,
 		"destinoNome": "C-141",
 		"data": "2020-11-28T10:43:37.74"
 	},
 	{    
 		"viagemId": 3,
 		"personagemId": 1,
-		"personagemNome": "Rick",
+		"personagemNome": "Rick",		
 		"personagemDimensao": "C-130",
 		"origemId": 1,
 		"origemNome": "C-130",
-		"destinoId": 3,
+		"destinoId": 4,
 		"destinoNome": "C-142",
 		"data": "2020-11-29T10:43:37.74"
 	},
 	{    
 		"viagemId": 4,
 		"personagemId": 1,
-		"personagemNome": "Rick",
+		"personagemNome": "Rick",		
 		"personagemDimensao": "C-130",
 		"origemId": 1,
 		"origemNome": "C-130",
-		"destinoId": 4,
+		"destinoId": 5,
 		"destinoNome": "C-143",
 		"data": "2020-11-30T10:43:37.74"
 	}

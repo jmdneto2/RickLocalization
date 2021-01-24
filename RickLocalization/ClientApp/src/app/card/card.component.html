@@ -17,9 +17,8 @@
   </mat-card-content>-->
 
   <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
-    <button mat-button (click)="showHistorico(card)" [routerLink]="['/historico']" >HISTÓRICO</button>
-    <button mat-button (click)="addViagem()">NOVA VIAGEM</button>
-    <app-modal></app-modal>
+    <button mat-button (click)="showHistorico(card)" [routerLink]="['/historico']" >HISTÓRICO</button>    
+    <app-modal [dataCard] ="card" ></app-modal>
   </mat-card-actions>
 
 </mat-card>

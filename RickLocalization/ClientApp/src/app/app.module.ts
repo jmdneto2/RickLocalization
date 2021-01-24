@@ -28,13 +28,14 @@ import { CardComponent } from './card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { CardDeckComponent } from './card-deck/card-deck.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogOverviewExampleDialog, ModalComponent } from './modal/modal.component';
+import { ModalBox, ModalComponent } from './modal/modal.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HistoricoComponent } from './views/historico/historico.component';
 import { MatTableModule } from '@angular/material/table';
 
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -51,7 +52,7 @@ import { MatTableModule } from '@angular/material/table';
     CardComponent,
     CardDeckComponent,
     ModalComponent,    
-    DialogOverviewExampleDialog, HistoricoComponent
+    ModalBox, HistoricoComponent
     
   ],
   imports: [
@@ -76,7 +77,8 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
     
 
   ],  

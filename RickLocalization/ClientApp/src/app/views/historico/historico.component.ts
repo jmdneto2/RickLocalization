@@ -39,7 +39,7 @@ export class HistoricoComponent{
         ((data: HistoricoModel[]) => {          
           this.historicoLista = data;
           this.dataSource = this.historicoLista;
-          let x = this.historicoLista.length;
+          //let x = this.historicoLista.length;
         })
       );
   }
