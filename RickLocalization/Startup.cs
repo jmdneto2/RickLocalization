@@ -32,8 +32,8 @@ namespace RickLocalization
         {
             services.AddAutoMapper();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddDbContext<VendasContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IVendaRepository, VendaRepository>();
+            services.AddDbContext<RickLocalizationContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IViagemRepository, ViagemRepository>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -79,6 +79,10 @@ namespace RickLocalization
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+
+                //endpoints.MapControllerRoute(
+                //    name: "custom",
+                //    pattern: "{controller}/{action=Index}/{id1?}/{id2?}/{id3?}");
             });
 
             app.UseSpa(spa =>

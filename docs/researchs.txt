@@ -1,0 +1,19 @@
+Como passar parametros na requisicao para api:
+termos a serem pesquisados:
+
+service angular api with parametes
+angular convert date XXXX-XX-XXTXX:XX:XX.XX
+problem in change to other page appear bottom angular
+
+https://stackoverflow.com/questions/36280947/how-to-pass-multiple-parameters-to-a-get-method-in-asp-net-core
+
+
+http://localhost:5000/viagem?idPerson=1&personagemDimensao1=C-130&includeItens=true
+http://localhost:5000/viagem?idPerson=1&personagemDimensao1=C-130
+
+na repository:
+dotnet ef --startup-project ..\RickLocalization\RickLocalization.WebApi.csproj migrations add Initial
+
+dotnet ef --startup-project ..\RickLocalization\RickLocalization.WebApi.csproj migrations
+
+Exception thrown: 'System.AggregateException' 

@@ -8,14 +8,14 @@ namespace RickLocalization.Tests
 {
     public class BaseControllerTests
     {
-        protected DbContextOptions<VendasContext> ContextOptions { get; }
+        protected DbContextOptions<RickLocalizationContext> ContextOptions { get; }
         public IConfiguration Configuration { get; }
         private readonly ILogger<BaseControllerTests> _logger;
         public IMapper mapper;
 
         //public BaseControllerTests(ILogger<BaseControllerTests> logger, DbContextOptions<VendasContext> contextOptions, IWebHostEnvironment env)
         //public BaseControllerTests(DbContextOptions<VendasContext> contextOptions, IWebHostEnvironment env)
-        public BaseControllerTests(DbContextOptions<VendasContext> contextOptions)
+        public BaseControllerTests(DbContextOptions<RickLocalizationContext> contextOptions)
         {
 
             var builder = new ConfigurationBuilder()

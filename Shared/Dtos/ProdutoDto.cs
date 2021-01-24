@@ -1,4 +1,4 @@
-﻿namespace RickLocalization.Shared
+﻿namespace RickLocalization.Shared.Dtos
 {
     public class ProdutoDto
     {

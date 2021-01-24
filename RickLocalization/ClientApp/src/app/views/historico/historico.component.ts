@@ -23,7 +23,7 @@ export class HistoricoComponent{
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       const idPersonagem = params['idPerson'];
-      const nomeDimensao = params['personagemDimensao2'];
+      const nomeDimensao = params['personagemDimensao'];      
       //console.log(idPersonagem);
       //console.log(nomeDimensao);
 

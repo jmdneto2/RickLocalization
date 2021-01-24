@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RickLocalization.Shared
+namespace RickLocalization.Shared.Dtos
 {
     public class PromocaoDto
     {

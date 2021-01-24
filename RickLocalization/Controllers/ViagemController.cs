@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using RickLocalization.Domain;
-using RickLocalization.Repository;
-using RickLocalization.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RickLocalization.Domain;
+using RickLocalization.Repository;
+using RickLocalization.Shared.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,43 +13,25 @@ namespace RickLocalization.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class VendaController : ControllerBase
+    public class ViagemController : ControllerBase
     {
-        private readonly IVendaRepository _repo;
-        private readonly ILogger<VendaController> _logger;
+        private readonly IViagemRepository _repo;
+        private readonly ILogger<ViagemController> _logger;
         private readonly IMapper _mapper;
 
-        public VendaController(IVendaRepository repo = null, IMapper mapper = null)
+        public ViagemController(IViagemRepository repo = null, IMapper mapper = null)
         {
             _repo = repo;
             _mapper = mapper;
-        }
+        }        
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        //[HttpGet("{idPerson}/{personagemDimensao1}/{includeItens}")]
+        public async Task<IActionResult> GetById([FromQuery] int idPerson, [FromQuery] string personagemDimensao1, bool includeItens = true)
         {
             try
             {
-                var vendas = _repo.GetAsync(true).Result;
-                var results = _mapper.Map<IEnumerable<VendaDto>>(vendas);
-
-                return Ok(results);
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        [HttpGet("{vendaId}")]
-        public async Task<IActionResult> GetById(int vendaId)
-        {
-            try
-            {
-                var vendas = _repo.GetByIdAsync(vendaId, true).Result;
-                var results = _mapper.Map<VendaDto>(vendas);
+                var viagens = _repo.GetByIdAsync(idPerson, personagemDimensao1, includeItens).Result;
+                var results = _mapper.Map<IEnumerable<ViagemDto>>(viagens);
 
                 return Ok(results);
 
@@ -90,7 +72,7 @@ namespace RickLocalization.WebApi.Controllers
                 }
 
                 //var venda = _mapper.Map<Venda>(dados); --desabilitando esta linha por enquanto pois precisa implementar validacao de dados recebidos
-                venda = new Venda(pedidos);                
+                venda = new Venda(pedidos);
                 var listaProdutos = _mapper.Map<Produto[]>(_repo.GetProdutosAsync().Result);
 
                 foreach (var itens in venda.Pedidos)

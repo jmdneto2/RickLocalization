@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RickLocalization.Repository
 {
-    public class VendaRepository : IVendaRepository
+    public class ViagemRepository : IViagemRepository
     {
-        private readonly VendasContext _context;
+        private readonly RickLocalizationContext _context;
 
-        public VendaRepository(VendasContext context)
+        public ViagemRepository(RickLocalizationContext context)
         {
             _context = context;
         }
@@ -35,31 +35,37 @@ namespace RickLocalization.Repository
             return (await _context.SaveChangesAsync()) > 0;
         }
 
-        public async Task<Venda[]> GetAsync(bool includeItens = false)
+        //public async Task<Venda[]> GetAsync(bool includeItens = false)
+        //{
+        //    IQueryable<Venda> venda = _context.Venda.AsNoTracking();
+
+        //    if (includeItens)
+        //    {
+        //        venda = venda.Include(v => v.Pedidos)
+        //             .ThenInclude(z => z.Itens);
+        //    }
+
+        //    return await venda.ToArrayAsync();
+
+        //}
+
+        public async Task<Viagem[]> GetByIdAsync(int personagemId, string dimensao, bool includeItens)
         {
-            IQueryable<Venda> venda = _context.Venda.AsNoTracking();
+            IQueryable<Viagem> viagemContext = _context.Viagem;                                                          
 
             if (includeItens)
             {
-                venda = venda.Include(v => v.Pedidos)
-                     .ThenInclude(z => z.Itens);
+                viagemContext = viagemContext.Include(v => v.Personagem)
+                     .ThenInclude(z => z.PersonagemDimensao);
+
+                viagemContext = viagemContext.Include(v => v.Origem);
+                viagemContext = viagemContext.Include(v => v.Destino);
             }
 
-            return await venda.ToArrayAsync();
+            IQueryable<Viagem> viagem = viagemContext
+                                        .Where(x => x.Personagem.PersonagemId == personagemId && x.Origem.DimensaoNome.Equals(dimensao)).AsNoTracking();
 
-        }
-
-        public async Task<Venda> GetByIdAsync(int vendaId, bool includeItens)
-        {
-            IQueryable<Venda> venda = _context.Venda.Where(x => x.VendaID == vendaId).AsNoTracking();
-
-            if (includeItens)
-            {
-                venda = venda.Include(v => v.Pedidos)
-                     .ThenInclude(z => z.Itens);
-            }
-
-            return await venda.FirstOrDefaultAsync();
+            return await viagem.ToArrayAsync();
         }
 
         public async Task<Produto[]> GetProdutosAsync()
