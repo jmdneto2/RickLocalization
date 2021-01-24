@@ -13,23 +13,23 @@
 
   <ng-container matColumnDef="personagemNome">
     <th mat-header-cell *matHeaderCellDef> Personagem </th>
-    <td mat-cell *matCellDef="let element"> {{element.personagemNome}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.personagem.personagemNome}} </td>
   </ng-container>
 
 
   <ng-container matColumnDef="personagemDimensao">
     <th mat-header-cell *matHeaderCellDef> Dimensão Person. </th>
-    <td mat-cell *matCellDef="let element"> {{element.personagemDimensao}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.personagem.personagemDimensao.dimensaoNome}} </td>
   </ng-container>
 
   <ng-container matColumnDef="origemNome">
     <th mat-header-cell *matHeaderCellDef> Dimensão Origem </th>
-    <td mat-cell *matCellDef="let element"> {{element.origemNome}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.origem.dimensaoNome}} </td>
   </ng-container>
 
   <ng-container matColumnDef="destinoNome">
     <th mat-header-cell *matHeaderCellDef> Destino </th>
-    <td mat-cell *matCellDef="let element"> {{element.destinoNome}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.destino.dimensaoNome}} </td>
   </ng-container>
 
   <ng-container matColumnDef="data">
