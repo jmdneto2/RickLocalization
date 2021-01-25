@@ -8,8 +8,22 @@
       "destinoId": "2"
     },
     {
-      "params": "{\"id\":1,\"personagemId\":1,\"personagemDimensao\":1,\"origemId\":1,\"destinoId\":\"2\"}",
-      "id": 2
+      "id": 4,
+      "personagem": 1,
+      "origemId": 1,
+      "destinoId": "2"
+    },
+    {
+      "id": 5,
+      "personagem": 1,
+      "origemId": 1,
+      "destinoId": "2"
+    },
+    {
+      "id": 6,
+      "personagem": 1,
+      "origemId": 1,
+      "destinoId": "2"
     }
   ]
 }

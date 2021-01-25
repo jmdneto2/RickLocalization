@@ -22,10 +22,27 @@ namespace RickLocalization.Domain
 
         }
 
+        public Viagem( Personagem personagem, Dimensao origem, Dimensao destino)
+        {            
+            Personagem = personagem;
+            Origem = origem;
+            Destino = destino;
+            Data = DateTime.Now;
+
+        }
+
         public Viagem()
         {
 
         }
+    }
+
+    public class ViagemPostDto
+    {
+        public int id { get; set; }
+        public int personagem { get; set; }
+        public int origemId { get; set; }
+        public int destinoId { get; set; }
     }
 
 }

@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RickLocalization.Business;
+using RickLocalization.Businness;
 
 namespace RickLocalization
 {
@@ -33,6 +35,7 @@ namespace RickLocalization
             services.AddAutoMapper();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<RickLocalizationContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IViagemBusiness, ViagemBusiness>();
             services.AddScoped<IViagemRepository, ViagemRepository>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
@@ -79,10 +82,7 @@ namespace RickLocalization
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-
-                //endpoints.MapControllerRoute(
-                //    name: "custom",
-                //    pattern: "{controller}/{action=Index}/{id1?}/{id2?}/{id3?}");
+               
             });
 
             app.UseSpa(spa =>

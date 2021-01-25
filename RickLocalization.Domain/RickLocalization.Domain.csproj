@@ -5,4 +5,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Item.cs" />
+    <Compile Remove="Pedido.cs" />
+    <Compile Remove="PedidoProdutoSumarizado.cs" />
+    <Compile Remove="Produto.cs" />
+    <Compile Remove="Promocao.cs" />
+    <Compile Remove="Venda.cs" />
+  </ItemGroup>
+
 </Project>

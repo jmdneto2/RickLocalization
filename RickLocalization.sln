@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Tests", "RickLocalization.Tests\RickLocalization.Tests.csproj", "{71DD1047-A250-4C73-8FF5-76B26C567C0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Business", "RickLocalization.Businness\RickLocalization.Business.csproj", "{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Business", "RickLocalization.Business\RickLocalization.Business.csproj", "{2FAA2950-2131-48BE-9CEA-9F8DD82A1515}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Shared", "Shared\RickLocalization.Shared.csproj", "{026FF005-7FC9-46E3-9587-85479CBDE74A}"
 EndProject

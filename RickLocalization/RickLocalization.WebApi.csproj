@@ -56,6 +56,7 @@
     <ProjectReference Include="..\RickLocalization.Domain\RickLocalization.Domain.csproj" />
     <ProjectReference Include="..\RickLocalization.Repository\RickLocalization.Repository.csproj" />
     <ProjectReference Include="..\Shared\RickLocalization.Shared.csproj" />
+    <ProjectReference Include="..\RickLocalization.Business\RickLocalization.Business.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

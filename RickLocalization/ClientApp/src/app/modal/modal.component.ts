@@ -60,7 +60,7 @@ export class ModalBox {
 
   setValue(event) {
     //console.log(event.value);
-    this.dimensaoEscolhidaId = event.value;
+    this.dimensaoEscolhidaId = +event.value;
     
   }
 

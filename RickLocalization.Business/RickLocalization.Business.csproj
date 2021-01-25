@@ -11,4 +11,12 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RickLocalization.Domain\RickLocalization.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RickLocalization.Repository\RickLocalization.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

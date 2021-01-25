@@ -15,12 +15,21 @@ namespace RickLocalization.Repository
             _context = context;
         }
 
+        public RickLocalizationContext Context => _context;
+
         #region Gerais
         public void Add<T>(T entity) where T : class
-        {            
+        {
+            //_context.Entry(entity).Property("DimensaoId").IsModified = false;
+            //_context.Entry(entity).State = EntityState.Detached;
+            
             _context.Add(entity);
-            //_context.Entry(entity).Property("VendaId").IsModified = false;
+            // _context.Entry(((Viagem) entity).Origem ).State = EntityState.Unchanged;
+
+
         }
+       
+
         public void Update<T>(T entity) where T : class
         {
             _context.Update(entity);
@@ -31,23 +40,10 @@ namespace RickLocalization.Repository
         }
         #endregion
         public async Task<bool> SaveChangesAsync()
-        {            
+        {
+            //_context.Entry(dimensao).State = EntityState.Detached;
             return (await _context.SaveChangesAsync()) > 0;
-        }
-
-        //public async Task<Venda[]> GetAsync(bool includeItens = false)
-        //{
-        //    IQueryable<Venda> venda = _context.Venda.AsNoTracking();
-
-        //    if (includeItens)
-        //    {
-        //        venda = venda.Include(v => v.Pedidos)
-        //             .ThenInclude(z => z.Itens);
-        //    }
-
-        //    return await venda.ToArrayAsync();
-
-        //}
+        }        
 
         public async Task<Viagem[]> GetByIdAsync(int personagemId, string dimensao, bool includeItens)
         {
@@ -68,22 +64,23 @@ namespace RickLocalization.Repository
             return await viagem.ToArrayAsync();
         }
 
-        public async Task<Produto[]> GetProdutosAsync()
+        public async Task<Personagem> GetDadosPersonagem(int personagemId)
         {
+            IQueryable <Personagem> personagemContext = _context.Personagem
+                                                        .Include(v => v.PersonagemDimensao)
+                                                        .Where(x => x.PersonagemId == personagemId)
+                                                        .AsNoTracking();                                                       
 
-            IQueryable<Produto> produto = _context.Produto.AsNoTracking();
 
-            return await produto.ToArrayAsync();
-
+            return await personagemContext.FirstOrDefaultAsync();
         }
 
-        public async Task<Produto> GetProdutoByIdAsync(int produtoId)
+        public async Task<Dimensao> GetDadosDimensao(int dimensaoId)
         {
-            IQueryable<Produto> produto = _context.Produto.Where(x => x.ProdutoId == produtoId).AsNoTracking();
+            IQueryable<Dimensao> dimensaoContext = _context.Dimensao
+                                                    .Where(x => x.DimensaoId == dimensaoId).AsNoTracking();
 
-            return await produto.FirstOrDefaultAsync();
-
+            return await dimensaoContext.FirstOrDefaultAsync();
         }
-
     }
 }

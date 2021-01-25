@@ -21,5 +21,18 @@ namespace RickLocalization.Domain
         }
     }
 
-    
+    public class DimensaoPersonagem : Dimensao
+    {
+
+    }
+
+    public class DimensaoOrigem : Dimensao
+    {
+
+    }
+
+    public class DimensaoDestino : Dimensao
+    {
+
+    }
 }

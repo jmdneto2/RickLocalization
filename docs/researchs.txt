@@ -7,6 +7,10 @@ problem in change to other page appear bottom angular
 
 https://stackoverflow.com/questions/36280947/how-to-pass-multiple-parameters-to-a-get-method-in-asp-net-core
 
+ json-server --watch db.json --port 3005
+  http://localhost:3000/viagens
+  C:\Users\jmdne\source\repos\RickLocalization\docs\jsons\json_viagens> json-server --watch db.json
+   json-server --watch db.json --port 3004
 
 http://localhost:5000/viagem?idPerson=1&personagemDimensao1=C-130&includeItens=true
 http://localhost:5000/viagem?idPerson=1&personagemDimensao1=C-130
@@ -17,3 +21,13 @@ dotnet ef --startup-project ..\RickLocalization\RickLocalization.WebApi.csproj m
 dotnet ef --startup-project ..\RickLocalization\RickLocalization.WebApi.csproj migrations
 
 Exception thrown: 'System.AggregateException' 
+
+
+https://stackoverflow.com/questions/45286764/adding-a-http-header-to-the-angular-httpclient-doesnt-send-the-header-why
+
+https://stackoverflow.com/questions/63395314/posting-json-object-via-ajax-to-asp-net-core-web-api
+
+
+ng g class shared/models/personagem.model
+
+{"The instance of entity type 'Dimensao' cannot be tracked because another instance with the same key value for {'DimensaoId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values."}

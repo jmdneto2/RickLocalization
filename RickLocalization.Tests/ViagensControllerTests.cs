@@ -9,15 +9,15 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using System.Collections.Generic;
 using Xunit;
+using RickLocalization.Business;
+using System.Threading.Tasks;
 
 namespace RickLocalization.Tests
 {
 
     public class ViagensControllerTests : BaseControllerTests
     {
-        private readonly ILogger<ViagemController> _logger;
-        private readonly Venda _venda;
-        private readonly List<Venda> _vendas = new List<Venda>();
+        private readonly ILogger<ViagemController> _logger;        
         private readonly MapperConfiguration _mockMapper;
 
         private Personagem _personagem;
@@ -30,7 +30,7 @@ namespace RickLocalization.Tests
         public ViagensControllerTests()
             : base(
                  new DbContextOptionsBuilder<RickLocalizationContext>()
-                .UseSqlServer("Data Source=NOTEPESSOAL;Initial Catalog=BD2;Integrated Security=True;")
+                .UseSqlServer("Data Source=NOTEPESSOAL;Initial Catalog=RickLocalization;Integrated Security=True;")
                 //.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 .Options)
         {
@@ -52,13 +52,18 @@ namespace RickLocalization.Tests
         [Fact]
         public void Get_ViagemPorParametros_DeveRetornarNotNull()
         {
+            
+            Mock<IViagemBusiness> mockBus = new Mock<IViagemBusiness>();            
+
             //Arrange Repository
             Mock<IViagemRepository> mockRepo = new Mock<IViagemRepository>();
+            //mockBus.Setup(s => s.GetByIdAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<bool>())).Returns(mockRepo.Object);
             mockRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<bool>())).ReturnsAsync(_viagens.ToArray);
 
             var mapper = _mockMapper.CreateMapper();
 
-            var controller = new ViagemController(mockRepo.Object, mapper);
+            var controller = new ViagemController(mockBus.Object, mapper, mockRepo.Object);
+            //TODO: CORRIGIR ISSO.
             //Act
             var result = controller.GetById(1,"C-130",true);
 

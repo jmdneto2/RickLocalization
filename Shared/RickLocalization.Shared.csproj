@@ -5,4 +5,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Dtos\ItemDto.cs" />
+    <Compile Remove="Dtos\PedidoDto.cs" />
+    <Compile Remove="Dtos\ProdutoDto.cs" />
+    <Compile Remove="Dtos\PromocaoDto.cs" />
+    <Compile Remove="Dtos\VendaDto.cs" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,7 @@
-import { Dimensao.Model } from './dimensao.model';
+import { DimensaoModel } from './dimensao.model';
 
 describe('Dimensao.Model', () => {
   it('should create an instance', () => {
-    expect(new Dimensao.Model()).toBeTruthy();
+    expect(new DimensaoModel()).toBeTruthy();
   });
 });
