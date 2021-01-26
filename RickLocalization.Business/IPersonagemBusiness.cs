@@ -11,6 +11,6 @@ namespace RickLocalization.Business
 {
     public interface IPersonagemBusiness
     {
-        Task<IEnumerable<PersonagemConjuntoDto>> GetAll();
+        IEnumerable<PersonagemConjuntoDto> GetAll();
     }
 }

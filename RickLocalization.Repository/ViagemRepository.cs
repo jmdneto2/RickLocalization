@@ -19,14 +19,8 @@ namespace RickLocalization.Repository
 
         #region Gerais
         public void Add<T>(T entity) where T : class
-        {
-            //_context.Entry(entity).Property("DimensaoId").IsModified = false;
-            //_context.Entry(entity).State = EntityState.Detached;
-            
+        {   
             _context.Add(entity);
-            // _context.Entry(((Viagem) entity).Origem ).State = EntityState.Unchanged;
-
-
         }
        
 
@@ -40,8 +34,7 @@ namespace RickLocalization.Repository
         }
         #endregion
         public async Task<bool> SaveChangesAsync()
-        {
-            //_context.Entry(dimensao).State = EntityState.Detached;
+        {            
             return (await _context.SaveChangesAsync()) > 0;
         }        
 
@@ -64,23 +57,5 @@ namespace RickLocalization.Repository
             return await viagem.ToArrayAsync();
         }
 
-        public async Task<Personagem> GetDadosPersonagem(int personagemId)
-        {
-            IQueryable <Personagem> personagemContext = _context.Personagem
-                                                        .Include(v => v.PersonagemDimensao)
-                                                        .Where(x => x.PersonagemId == personagemId)
-                                                        .AsNoTracking();                                                       
-
-
-            return await personagemContext.FirstOrDefaultAsync();
-        }
-
-        public async Task<Dimensao> GetDadosDimensao(int dimensaoId)
-        {
-            IQueryable<Dimensao> dimensaoContext = _context.Dimensao
-                                                    .Where(x => x.DimensaoId == dimensaoId).AsNoTracking();
-
-            return await dimensaoContext.FirstOrDefaultAsync();
-        }
     }
 }

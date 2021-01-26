@@ -20,14 +20,8 @@ namespace RickLocalization.Repository
 
         #region Gerais
         public void Add<T>(T entity) where T : class
-        {
-            //_context.Entry(entity).Property("DimensaoId").IsModified = false;
-            //_context.Entry(entity).State = EntityState.Detached;
-            
+        {            
             _context.Add(entity);
-            // _context.Entry(((Viagem) entity).Origem ).State = EntityState.Unchanged;
-
-
         }
        
 
@@ -41,32 +35,11 @@ namespace RickLocalization.Repository
         }
         #endregion
         public async Task<bool> SaveChangesAsync()
-        {
-            //_context.Entry(dimensao).State = EntityState.Detached;
+        {            
             return (await _context.SaveChangesAsync()) > 0;
         }        
 
-        //public async Task<Viagem[]> GetByIdAsync(int personagemId, string dimensao, bool includeItens)
-        //{
-        //    IQueryable<Viagem> viagemContext = _context.Viagem;                                                          
-
-        //    if (includeItens)
-        //    {
-        //        viagemContext = viagemContext.Include(v => v.Personagem)
-        //             .ThenInclude(z => z.PersonagemDimensao);
-
-        //        viagemContext = viagemContext.Include(v => v.Origem);
-        //        viagemContext = viagemContext.Include(v => v.Destino);
-        //    }
-
-        //    IQueryable<Viagem> viagem = viagemContext
-        //                                .Where(x => x.Personagem.PersonagemId == personagemId && x.Origem.DimensaoNome.Equals(dimensao)).AsNoTracking();
-
-        //    return await viagem.ToArrayAsync();
-        //}
-
-
-        public async Task<PersonagemConjunto[]> GetAll()
+        public IEnumerable<PersonagemConjunto> GetAll()
         {
             List <Personagem> listaRick = GetAllRick().Result;
             List <Personagem> listaMorty = GetAllMorty().Result;
@@ -78,14 +51,8 @@ namespace RickLocalization.Repository
                         rick.PersonagemId, rick.PersonagemNome, rick.PersonagemDimensao, rick.ImagemPersonagem,
                         morth.PersonagemId, morth.PersonagemNome, morth.PersonagemDimensao, morth.ImagemPersonagem
                     );
-                    
-                    
-            
 
-            //int personagemId, string personagemNome, Dimensao personagemDimensao, string imagemPersonagem,
-            //int personagemId2, string personagemNome2, Dimensao personagemDimensao2, string imagemPersonagem2
-
-            return lista.ToArray();
+            return lista;
         }
         
 

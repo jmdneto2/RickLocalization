@@ -11,7 +11,7 @@ namespace RickLocalization.Repository
         void Add<T>(T entity) where T : class;
         void Update<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;
-        Task<PersonagemConjunto[]> GetAll();
+        IEnumerable<PersonagemConjunto> GetAll();
 
         Task<List<Personagem>> GetAllRick();
         Task<List<Personagem>> GetAllMorty();

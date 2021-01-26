@@ -26,11 +26,11 @@ namespace RickLocalization.Businness
             _mapper = mapper;
         }        
 
-        public async Task<IEnumerable<PersonagemConjuntoDto>> GetAll()
+        public IEnumerable<PersonagemConjuntoDto> GetAll()
         {
             try
             {
-                var personagens = _repo.GetAll().Result;
+                var personagens = _repo.GetAll();
                 var results = _mapper.Map<IEnumerable<PersonagemConjuntoDto>>(personagens);
 
                 return results;

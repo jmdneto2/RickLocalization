@@ -10,10 +10,7 @@ namespace RickLocalization.Business
 {
     public interface IViagemBusiness
     {
-        public Task<IEnumerable<ViagemDto>> GetByIdAsync(int idPerson, string personagemDimensao1, bool includeItens = true);
-        public void AdicionarViagem(Viagem viagem);
-        public Personagem GetDadosPersonagem(int personagemId);
-        public Dimensao GetDadosOrigem(int origemId);
-        public Dimensao GetDadosDestino(int destinoId);
+        IEnumerable<ViagemDto> GetById(int idPerson, string personagemDimensao1, bool includeItens = true);
+        public void AdicionarViagem(int personagemId, int origemId, int destinoId);        
     }
 }

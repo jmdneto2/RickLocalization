@@ -24,15 +24,6 @@ export class ModalService {
       destinoId: this.dimensaoEscolhidaId
     });
 
-    //var json = JSON.stringify(form.value);
-    //let json = JSON.stringify({
-    //  id:0,
-    //  personagemId: this.dadosCardSelecionado.personagemId1,
-    //  personagemDimensao: this.dadosCardSelecionado.personagemDimensaoId1,
-    //  origemId: this.dadosCardSelecionado.personagemDimensaoId1,
-    //  destinoId: this.dimensaoEscolhida
-    //});
-    //let json = JSON.stringify({ ClienteId: 1, Nome: "teste", Email: "teste2", Celular1: "11232323", Celular2: "113333333" });
     let body = json;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');

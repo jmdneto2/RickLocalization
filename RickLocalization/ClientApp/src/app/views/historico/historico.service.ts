@@ -13,11 +13,7 @@ export class HistoricoService {
   public historicoLista: HistoricoModel[];
 
   getHistorico(idPersonagem: number, nomeDimensao: string): Observable<HistoricoModel[]>  {
-    let params = new HttpParams();
-
-    //params = params.append('idPersonagem', idPersonagem.toString());
-    //params = params.append('nomeDimensao', nomeDimensao);
-
+    
     const dados = this.http.get<HistoricoModel[]>(`http://localhost:5000/viagem?idPerson=${idPersonagem}&personagemDimensao1=${nomeDimensao}`, { params: {} , responseType: 'json' })
 
   //getHistorico(idPersonagem: number, nomeDimensao: string): Observable < HistoricoModel[] > {

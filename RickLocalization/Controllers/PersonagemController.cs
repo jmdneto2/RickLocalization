@@ -26,11 +26,11 @@ namespace RickLocalization.WebApi.Controllers
             _mapper = mapper;            
         }        
         
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
             try
             {
-                var personagens = _personagemBusiness.GetAll().Result;                
+                var personagens = _personagemBusiness.GetAll();                
 
                 return Ok(personagens);
 

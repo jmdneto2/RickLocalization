@@ -26,11 +26,11 @@ namespace RickLocalization.WebApi.Controllers
             _mapper = mapper;            
         }        
         
-        public async Task<IActionResult> GetById([FromQuery] int idPerson, [FromQuery] string personagemDimensao1, bool includeItens = true)
+        public IActionResult GetById([FromQuery] int idPerson, [FromQuery] string personagemDimensao1, bool includeItens = true)
         {
             try
             {
-                var viagens = _viagemBusiness.GetByIdAsync(idPerson, personagemDimensao1, includeItens).Result;                
+                var viagens = _viagemBusiness.GetById(idPerson, personagemDimensao1, includeItens);                
 
                 return Ok(viagens);
 
@@ -42,24 +42,16 @@ namespace RickLocalization.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ViagemDto>> Post([FromBody] ViagemPostDto data)
+        public ActionResult<ViagemDto> Post([FromBody] ViagemPostDto data)
         {
             var personagemId = data.personagem; 
             var origemId = data.origemId;
             var destinoId = data.destinoId;
-
-            var personagem = _viagemBusiness.GetDadosPersonagem(personagemId);
-            var origem = _viagemBusiness.GetDadosOrigem(origemId);            
-            var destino = _viagemBusiness.GetDadosDestino(destinoId);
             
             try
             {
-                
-                var viagem = new Viagem(personagem, origem, destino);
-
-                _viagemBusiness.AdicionarViagem(viagem);
+                _viagemBusiness.AdicionarViagem(personagemId, origemId, destinoId);
                 return Ok();                
-
             }
             catch (Exception ex)
             {

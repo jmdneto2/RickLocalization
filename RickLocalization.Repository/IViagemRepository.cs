@@ -10,10 +10,7 @@ namespace RickLocalization.Repository
         void Add<T>(T entity) where T : class;
         void Update<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;        
-        Task<Viagem[]> GetByIdAsync(int personagemId, string dimensao, bool includeItens);
-        Task<Personagem> GetDadosPersonagem(int personagemId);
-
-        Task<Dimensao> GetDadosDimensao(int dimensaoId);
+        Task<Viagem[]> GetByIdAsync(int personagemId, string dimensao, bool includeItens);        
 
         RickLocalizationContext Context { get; }
     }

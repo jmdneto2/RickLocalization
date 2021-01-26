@@ -26,7 +26,7 @@ namespace RickLocalization.Businness
             _mapper = mapper;
         }        
 
-        public async Task<IEnumerable<ViagemDto>> GetByIdAsync(int idPerson, string personagemDimensao1, bool includeItens = true)
+        public IEnumerable<ViagemDto> GetById(int idPerson, string personagemDimensao1, bool includeItens = true)
         {
             try
             {
@@ -42,34 +42,18 @@ namespace RickLocalization.Businness
             }
         }
 
-        public void AdicionarViagem(Viagem viagem)
+        public void AdicionarViagem(int personagemId, int origemId, int destinoId)
         {
-            var personagem = _repo.Context.Personagem.FirstOrDefaultAsync(x => x.PersonagemId == viagem.Personagem.PersonagemId).Result;
-            var origem = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == viagem.Origem.DimensaoId).Result;
-            var destino = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == viagem.Destino.DimensaoId).Result;
+            var personagem = _repo.Context.Personagem.FirstOrDefaultAsync(x => x.PersonagemId == personagemId).Result;
+            var origem = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == origemId).Result;
+            var destino = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == destinoId).Result;
 
-            var viagem2 = new Viagem(personagem, origem, destino);
+            var viagem = new Viagem(personagem, origem, destino);
 
-            _repo.Add(viagem2);
+            _repo.Add(viagem);
 
             _repo.SaveChangesAsync().Wait();
             
-        }
-
-        public Personagem GetDadosPersonagem(int personagemId)
-        {
-            Personagem personagem = _repo.GetDadosPersonagem(personagemId).Result;
-            return personagem;
-        }
-        public Dimensao GetDadosOrigem(int origemId)
-        {
-            Dimensao dimensao = _repo.GetDadosDimensao(origemId).Result;
-            return dimensao;
-        }
-        public Dimensao GetDadosDestino(int destinoId)
-        {
-            Dimensao dimensao = _repo.GetDadosDimensao(destinoId).Result;
-            return dimensao;
         }
     }
 }
