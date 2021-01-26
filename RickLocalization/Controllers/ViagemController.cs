@@ -16,20 +16,16 @@ namespace RickLocalization.WebApi.Controllers
     [ApiController]
     [Route("[controller]")]
     public class ViagemController : ControllerBase
-    {
-        private readonly IViagemRepository _repo;
-        private readonly ILogger<ViagemController> _logger;
+    {        
         private readonly IMapper _mapper;
         private readonly IViagemBusiness _viagemBusiness;
 
-        public ViagemController(IViagemBusiness viagemBusiness, IMapper mapper = null, IViagemRepository repo = null)
+        public ViagemController(IViagemBusiness viagemBusiness, IMapper mapper = null)
         {
             _viagemBusiness = viagemBusiness;
-            _mapper = mapper;
-            _repo = repo;
+            _mapper = mapper;            
         }        
-
-        //[HttpGet("{idPerson}/{personagemDimensao1}/{includeItens}")]
+        
         public async Task<IActionResult> GetById([FromQuery] int idPerson, [FromQuery] string personagemDimensao1, bool includeItens = true)
         {
             try
@@ -62,17 +58,7 @@ namespace RickLocalization.WebApi.Controllers
                 var viagem = new Viagem(personagem, origem, destino);
 
                 _viagemBusiness.AdicionarViagem(viagem);
-                return Ok();
-
-                
-                //if (await _repo.SaveChangesAsync())
-                //{
-                //    return Created($"/venda/{venda.VendaID}", venda);
-                //}
-                //else
-                //{
-                //    return BadRequest("Erro ao criar venda");
-                //}
+                return Ok();                
 
             }
             catch (Exception ex)

@@ -22,11 +22,7 @@ export class CardComponent implements OnInit {
 
   showHistorico(cardEscolhido): void {
     //console.log("Passou Aqui");
-    this.router.navigate(['./historico'], { queryParams: { idPerson: this.card.personagemId1, personagemDimensao1: this.card.personagemDimensao1}});
-  }
-
-  addViagem(): void {
-    console.log("Passou Aqui");
-  }
+    this.router.navigate(['./historico'], { queryParams: { idPerson: this.card.personagem1Id, personagemDimensao1: this.card.personagem1Dimensao.dimensaoNome}});
+  } 
 
 }

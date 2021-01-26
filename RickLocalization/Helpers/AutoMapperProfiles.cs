@@ -19,6 +19,11 @@ namespace RickLocalization.WebApi.Helpers
                 .ForMember(dest => dest.PersonagemDimensao, opt => { })
                 .ReverseMap();
 
+            CreateMap<PersonagemConjunto, PersonagemConjuntoDto>()
+                .ForMember(dest => dest.Personagem1Dimensao, opt => { })
+                .ForMember(dest => dest.Personagem2Dimensao, opt => { })
+                .ReverseMap();
+
             CreateMap<Dimensao, DimensaoDto>()                
                 .ReverseMap();
         }

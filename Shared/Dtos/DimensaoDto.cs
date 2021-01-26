@@ -8,5 +8,7 @@ namespace RickLocalization.Shared.Dtos
     {
         public int DimensaoId { get; set; }
         public string DimensaoNome { get; set; }
+
     }
+    
 }

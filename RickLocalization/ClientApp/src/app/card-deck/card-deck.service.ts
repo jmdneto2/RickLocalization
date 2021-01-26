@@ -14,7 +14,8 @@ export class CardDeckService {
   public cardsDisplayed: CardModel[];
 
   getCards(): Observable<CardModel[]> {
-    const dados = this.http.get<CardModel[]>('http://localhost:3004/personagens', { params: {}, responseType: 'json' })//TODO: IMPLEMENTAR PARA PUXAR DA API.
+    const dados = this.http.get<CardModel[]>('http://localhost:5000/personagem', { params: {}, responseType: 'json' })
+    //const dados = this.http.get<CardModel[]>('http://localhost:3004/personagens', { params: {}, responseType: 'json' })
 
     return dados; 
 

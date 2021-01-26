@@ -37,6 +37,8 @@ namespace RickLocalization
             services.AddDbContext<RickLocalizationContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IViagemBusiness, ViagemBusiness>();
             services.AddScoped<IViagemRepository, ViagemRepository>();
+            services.AddScoped<IPersonagemBusiness, PersonagemBusiness>();
+            services.AddScoped<IPersonagemRepository, PersonagemRepository>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

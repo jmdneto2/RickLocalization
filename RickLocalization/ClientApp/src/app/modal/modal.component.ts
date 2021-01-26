@@ -26,14 +26,14 @@ export class ModalComponent {
       data: {
         imagemPersonagem1: this.dataCard.imagemPersonagem1,
         imagemPersonagem2: this.dataCard.imagemPersonagem2,
-        personagemDimensao1: this.dataCard.personagemDimensao1,
-        personagemDimensao2: this.dataCard.personagemDimensao2,
-        personagemDimensaoId1: this.dataCard.personagemDimensaoId1,
-        personagemDimensaoId2: this.dataCard.personagemDimensaoId2,
-        personagemId1: this.dataCard.personagemId1,
-        personagemId2: this.dataCard.personagemId2,
-        personagemNome1: this.dataCard.personagemNome1,
-        personagemNome2: this.dataCard.personagemNome2,
+        personagem1Dimensao: this.dataCard.personagem1Dimensao,
+        personagem2Dimensao: this.dataCard.personagem2Dimensao,
+        personagem1DimensaoId: this.dataCard.personagem1DimensaoId,
+        personagem2DimensaoId: this.dataCard.personagem2DimensaoId,
+        personagem1Id: this.dataCard.personagem1Id,
+        personagem2I2: this.dataCard.personagem2Id,
+        personagem1Nome: this.dataCard.personagem1Nome,
+        personagem2Nome: this.dataCard.personagem2Nome,
 
       }     
     });

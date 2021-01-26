@@ -15,30 +15,12 @@ export class ModalService {
 
   postJSON(dados: CardModel, dimensao: number) {
     this.dadosCardSelecionado = dados;
-    this.dimensaoEscolhidaId = dimensao;
-
-    //const dimensaoSelecionada: DimensaoModel = {
-    //  dimensaoId: this.dimensaoEscolhidaId,
-    //  dimensaoNome: ""
-    //}
-
-    //const dimensaoPersonagem: DimensaoModel = {
-    //  dimensaoId: this.dadosCardSelecionado.personagemDimensaoId1,
-    //  dimensaoNome: ""
-    //}
-
-    //const personagem: PersonagemModel = {
-    //  personagemId: this.dadosCardSelecionado.personagemId1,
-    //  personagemNome: this.dadosCardSelecionado.personagemNome1,
-    //  personagemDimensao: dimensaoPersonagem,
-    //  imagemPersonagem: ""
-
-    //} 
+    this.dimensaoEscolhidaId = dimensao;    
 
     const json = JSON.stringify({
       id: 0,
-      personagem: this.dadosCardSelecionado.personagemId1,      
-      origemId: this.dadosCardSelecionado.personagemDimensaoId1,
+      personagem: this.dadosCardSelecionado.personagem1Id,      
+      origemId: this.dadosCardSelecionado.personagem1Dimensao.dimensaoId,
       destinoId: this.dimensaoEscolhidaId
     });
 
@@ -62,14 +44,14 @@ export class ModalService {
       })
       .subscribe(
         (val) => {
-          console.log("POST call successful value returned in body",
+          console.log("POST Response Ok!",
             val);
         },
         response => {
-          console.log("POST call in error", response);
+          console.log("POST error", response);
         },
         () => {
-          console.log("The POST observable is now completed.");
+          console.log("The POST observable completed.");
         });
 
   }

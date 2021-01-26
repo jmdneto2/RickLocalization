@@ -17,8 +17,7 @@ namespace RickLocalization.Businness
     public class ViagemBusiness : IViagemBusiness
     {
         private readonly IViagemRepository _repo;
-        private readonly IMapper _mapper;
-        //private readonly RickLocalizationContext _context;
+        private readonly IMapper _mapper;        
 
 
         public ViagemBusiness(IViagemRepository repo = null, IMapper mapper = null)
@@ -45,15 +44,14 @@ namespace RickLocalization.Businness
 
         public void AdicionarViagem(Viagem viagem)
         {
-            //_repo.Context.Entry(viagem.Personagem).State = EntityState.Detached;
-            //_repo.Context.Entry(viagem.Origem).State = EntityState.Detached;
-            //_repo.Context.Entry(viagem.Destino).State = EntityState.Detached;
+            var personagem = _repo.Context.Personagem.FirstOrDefaultAsync(x => x.PersonagemId == viagem.Personagem.PersonagemId).Result;
+            var origem = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == viagem.Origem.DimensaoId).Result;
+            var destino = _repo.Context.Dimensao.FirstOrDefaultAsync(x => x.DimensaoId == viagem.Destino.DimensaoId).Result;
 
-            //var personagem = _repo.Context.Personagem.FirstOrDefaultAsync(x => x.PersonagemId == viagem.Personagem.PersonagemId);
-            //var origem = _repo.Context.
+            var viagem2 = new Viagem(personagem, origem, destino);
 
-            //_repo.Add(viagem);       
-            
+            _repo.Add(viagem2);
+
             _repo.SaveChangesAsync().Wait();
             
         }
@@ -73,33 +71,5 @@ namespace RickLocalization.Businness
             Dimensao dimensao = _repo.GetDadosDimensao(destinoId).Result;
             return dimensao;
         }
-
-        //public void MontarPedidos(VendaDto dados)
-        //{
-        //    var pedido = new Pedido();
-        //    var pedidos = new List<Pedido>();
-
-        //    foreach (var pedidoDto in dados.Pedidos)
-        //    {
-        //        //Converte DTO para classe do domínio
-        //        var itensParaValidar = _mapper.Map<Item[]>(dados.Pedidos.FirstOrDefault().Itens);
-
-        //        var itens = new List<Item>();
-
-        //        foreach (var item in itensParaValidar)
-        //        {
-        //            itens.Add(new Item(item.Produto, item.Quantidade));
-        //        }
-
-        //        var resultadoInclusaoItens = pedido.AdicionarItens(itens);
-
-        //        if (resultadoInclusaoItens.Item1)
-        //        {
-        //            pedidos.Add(pedido);
-        //        }
-        //    }
-
-        //}
-
     }
 }
